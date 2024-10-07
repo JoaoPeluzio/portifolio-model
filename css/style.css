@@ -1,0 +1,705 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Raleway, sans-serif;
+  font-size: 62.5%;
+
+  /*Cores*/
+  --texto-cor-primaria: #464646;
+  --background-color-section-aboutme: #EAF2FD;
+  --logo-color: #2A7AE4;
+  --page-background-color: #F5F5F5;
+  --button-background: var(--azul-100, #2A7AE4);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--page-background-color);
+}
+
+/*NAVEGACAO*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  color: var(--texto-cor-primaria);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 5rem;
+  border-radius: 35%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9.5rem 0 9.5rem;
+  font-size: 1.2rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--texto-cor-primaria); /* Mantém a cor do texto */
+  text-decoration: none;
+  position: relative; /* Necessário para o ::after funcionar */
+  padding-bottom: .3rem; /* Espaço extra para a linha */
+
+ 
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px; 
+  background: rgb(72, 72, 72);
+  left: 0;
+  bottom: 0; /* Posiciona a linha exatamente embaixo do link */
+  transition: width 0.3s ease-in-out; /* Animação suave */
+  border-radius: 25rem 25rem 25rem 25rem;
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Aumenta o tamanho da linha ao passar o mouse */
+}
+
+/*nav ul li a:hover {
+  color: var(--texto-cor-primaria);
+}*/
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  font-weight: 500;
+}
+
+nav p {
+  
+  font-weight: 700;
+}
+
+
+/*SECTION INTRODUCTION*/
+
+.introduction {
+  display: flex;
+  align-items: center;
+  padding: 2rem 9.5rem 0 9.5rem;
+  font-size: 1vw;
+}
+
+.introduction__flex {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+
+.introduction h1 {
+  font-size: 3.5rem;
+}
+
+.introduction p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.image {
+  display: flex;
+  flex-basis: fit-content;
+  justify-content: center;
+}
+
+.image img{
+  width: 100%;
+  height: auto;
+
+  border-radius: 35%;
+}
+
+.buttons {
+  display: flex;
+  gap: 1%;
+}
+
+.buttons__flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  border: none;
+  background: none;
+
+  font-size: 1.3rem;
+  font-weight: 500;
+
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animação suave */
+
+}
+
+.buttons__flex:hover {
+  font-weight: 500;
+  color: var(--texto-cor-primaria);
+  transform: scale(1.2); /* Aumenta o botão visualmente */
+  cursor: pointer; 
+}
+
+.buttons__flex a {
+  text-decoration: none;
+}
+
+
+.buttons__flex img {
+  width: 18%;
+  color: var(--texto-cor-primaria);
+}
+
+/*SECTION ABOUTME*/
+
+.aboutme {
+  right: 0;
+  background-color: var(--background-color-section-aboutme);
+  width: 100%;
+  height: auto;
+  margin-top: 5.5rem;
+  padding: 5.5rem 9.5rem 5.5rem 9.5rem;
+  z-index: 10; 
+}
+
+.aboutme__div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.aboutme__div h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--texto-cor-primaria);
+}
+
+.aboutme__div p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/*SECTION SKILLS*/
+
+.skills {
+  width: 100%;
+  height: auto;
+
+  padding: 5.5rem 9.5rem 5.5rem 9.5rem;
+
+}
+
+.skills h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--texto-cor-primaria);
+  text-align: center;
+}
+.skills__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skills__container__card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  width: 16rem;
+    height: 16rem;
+  background-color: #FFF;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  box-shadow: 0 3px 10px rgb(0 0 0 / 5%), 0 3px 10px rgb(0 0 0 / 1%);
+
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.skills__container__card:hover {
+  transform: scale(1.10);
+  cursor: pointer;
+}
+
+.skills__container__card img {
+  width: 1.rem;
+  height: 2.3rem;
+}
+
+
+/*SECTION GRADUATION*/
+
+.graduation {
+  width: 100%;
+  height: auto;
+
+  padding: 5.5rem 9.5rem 5.5rem 9.5rem;
+
+
+  background-color: var(--background-color-section-aboutme);
+}
+ 
+.graduation > h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--texto-cor-primaria);
+  text-align: center;
+
+  margin-bottom: 2rem;
+}
+
+.graduation__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  justify-content: center;
+  flex-direction: row;
+  
+  width: 100%;
+  height: auto;
+
+  margin-top: 2rem;
+}
+
+.graduation__container__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.graduation__container__card {
+  flex: 1 1 300px; /* O card ocupará no mínimo 300px e crescerá conforme o espaço disponível */
+  max-width: 23rem; /* Limita o tamanho máximo dos cards */
+  max-height: 23rem; /* Ajusta a altura de acordo com o conteúdo */
+  background-color: #FFF;
+
+  box-shadow: 0 3px 10px rgb(0 0 0 / 5%), 0 3px 10px rgb(0 0 0 / 1%);
+
+}
+
+
+.graduation__container__main:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+
+.graduation__container__card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.graduation__container__card__info h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.graduation__container__card__info p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.graduation__container__card img {
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/*SECTION PROFESSIONAL*/
+
+.professional {
+  width: 100%;
+  height: auto;
+
+  padding: 5.5rem 9.5rem 5.5rem 9.5rem;
+}
+
+.professional > h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--texto-cor-primaria);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.professional__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.3rem;
+}
+
+.professional__container__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.professional__container__img {
+  width: 70%;
+}
+
+.professional__container__card img {
+  width: 100%;
+  height: auto;
+}
+
+.professional__container__info h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.professional__container__info p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.professional__container__info__buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button a {
+  text-decoration: none;
+}
+
+.professional__container__info__buttons button:first-child {
+  border: 1px solid var(--button-background);
+  background: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+
+
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.professional__container__info__buttons button:first-child a {
+  color: var(--button-background);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.professional__container__info__buttons button:first-child:hover {
+  transform: scale(1.1);
+}
+
+.professional__container__info__buttons button:last-child {
+  border: none;
+  background: var(--button-background);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.professional__container__info__buttons button:last-child:hover {
+  transform: scale(1.1);
+}
+
+.professional__container__info__buttons button:last-child a {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+
+.professional__container .professional__container__card:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+/*SECTION CONTACT*/ 
+
+.contact {
+  padding: 5.5rem 9.5rem 5.5rem 9.5rem;
+  width: 100vw;
+  height: auto;
+  background-color: var(--background-color-section-aboutme);
+}
+
+.contact__form__contact__img__container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.contact__form__contact__img__container img {
+  width: 50vw;
+  height: auto;
+  object-fit: contain;
+}
+
+.contact__form__container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  gap: 2rem;
+}
+
+.contact__container__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__container__info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact__container__info p {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.contact__form__label__name {
+  position: absolute;
+  margin: .5rem 0 1rem 1rem;
+  color: #A2A2A2;
+  pointer-events: none;
+
+  font-size: .90rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+
+  color: #2A7AE4;
+}
+
+
+.contact__form__label__email {
+  position: absolute;
+  margin: .5rem 0 1rem 1rem;
+  color: #A2A2A2;
+  pointer-events: none;
+  font-size: .90rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+
+  color: #2A7AE4;
+}
+
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 1.7rem 1.7rem 1.7rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #007bff;
+
+  resize: none;
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #007bff;
+  border-color: #007bff;
+}
+
+
+.contact__form button {
+  padding: 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  max-width: 15rem;
+}
+
+.contact__form button:hover {
+  background-color: #0056b3;
+}
+
+/*FOOTER*/
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #464646;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+
+  nav ul li {
+    display: none;
+  }
+
+  .introduction {
+    padding: 2rem;
+  }
+
+  .introduction h1 {
+    font-size: 1.3rem;
+}
+
+.introduction p {
+  font-size: 1rem;
+}
+
+  .buttons__flex {
+    font-size: 1rem;
+  }
+
+  .aboutme {
+    padding: 2rem;
+  }
+
+  .aboutme h1 {
+    font-size: 1.3rem;
+  }
+
+  .aboutme p {
+    font-size: 1rem;
+  }
+
+  .skills { 
+    padding: 2rem;
+  }
+
+  .skills h1 {
+    font-size: 1.37rem;
+  }
+
+  .skills__container {
+    justify-content: center;
+  }
+
+
+  .skills__container__card {
+    width: 14rem;
+    height: 8rem;
+  }
+
+  .graduation {
+    padding: 2rem;
+  }
+
+  .graduation h1 {
+    font-size: 1.37rem;
+  }
+
+  .graduation__container {
+    gap: 2rem;
+  }
+
+  .graduation__container__card {
+    flex: 1 1;
+    width: 18rem;
+    height: 7rem;
+  }
+
+  .professional {
+    padding: 2rem;
+  }
+
+  .professional h1 {
+    font-size: 1.37rem;
+  }
+
+  .professional__container__card {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+  .professional__container .professional__container__card:nth-child(2) {
+  flex-direction: column;
+}
+
+.contact {
+  padding: 2rem;
+}
+
+.contact__container__info h1 {
+  font-size: 1.37rem;
+}
+
+.contact__container__info p {
+  font-size: 1rem;
+}
+
+.contact__form__contact__img__container img {
+  display: none;
+}
+
+.contact__form button {
+  width: 11rem;
+  padding: 1rem;
+}
+
+}
+
+@media (max-width: 480px) {
+
+  .introduction {
+    flex-direction: column-reverse;
+  }
+
+
+  .buttons__flex {
+    font-size: 1rem;
+  }
+
+.skills__container {
+  justify-content: center;
+}
+
+.graduation__container__card {
+  flex: 1 1;
+  width: 18rem;
+  height: 8rem;
+}
+
+}
