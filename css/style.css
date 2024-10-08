@@ -553,6 +553,21 @@ button a {
   background-color: #0056b3;
 }
 
+
+.custom-confirm-button {
+  background-color: #007bff;  /* Cor de fundo verde */
+  color: white;  /* Cor do texto branco */
+  border: none;
+  padding: 0.5rem;
+  width: 5rem;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.custom-confirm-button:hover {
+  background-color: #0056b3;  /* Cor ao passar o mouse */
+}
 /*FOOTER*/
 
 footer {

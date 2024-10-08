@@ -13,10 +13,12 @@
   <title>João Victor Peluzio</title>
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
-  <script src="main.js" defer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </script>
+  <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -259,26 +261,29 @@
           <p>Preencha o formulário ao lado e entrarei em contato o mais rápido possível.</p>
         </div>
 
-        <form id="contact__form__id" class="contact__form" aria-labelledby="contact__heading">
+        <form novalidate id="contact__form__id" action="https://formspree.io/f/movqapkj"
+        method="POST" class="contact__form" aria-labelledby="contact__heading">
           <div>
-          <label class="contact__form__label__name" for="name">Nome</label>
-          <input type="text" id="name" name="name" placeholder="Fulano da Silva" autocomplete="name" required>
+            <label class="contact__form__label__name" for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Fulano da Silva" autocomplete="name" required>
           </div>
           <div>
-          <label class="contact__form__label__email" for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="exemplo@email.com" autocomplete="email" required>
+            <label class="contact__form__label__email" for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="exemplo@email.com" autocomplete="email" required>
           </div>
           <label for="subject"></label>
           <input type="text" id="subject" name="subject" placeholder="Assunto" autocomplete="off" required>
 
           <label for="message"></label>
-          <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui" autocomplete="off" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui" autocomplete="off"
+            required></textarea>
 
           <button type="submit">Enviar mensagem</button>
         </form>
 
         <p id="error-message" style="color: red; display: none;">Por favor, preencha todos os campos corretamente.</p>
       </div>
+
     </div>
   </section>
 

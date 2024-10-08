@@ -1,50 +1,52 @@
+document.getElementById('contact__form__id').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const nome = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const assunto = document.getElementById("subject").value.trim();
+  const mensagem = document.getElementById("message").value.trim();
+  const validaEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  if (nome === "" || email === "" || assunto === "" || mensagem === "") {
+    
+    Swal.fire({
+      title: "Verifique suas informações!",
+      text: "Provavelmente existe um campo vazio.",
+      icon: "warning",
+      confirmButtonText: 'OK',
+      customClass: {
+      confirmButton: 'custom-confirm-button',
+    }});
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contact__form__id');
-
-  form.addEventListener('submit', (e) => {
-      e.preventDefault(); // Prevenindo a submissão padrão do formulário
-      formValidation(); // Chame a função de validação
-  });
-});
-
-function formValidation() {
-  // Capturando os valores dentro do evento de submit
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const subject = document.getElementById('subject').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  // Regex para validar o formato do e-mail
-  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-  // Verificando se os campos estão preenchidos
-  if (name === '' || email === '' || subject === '' || message === '') {
-      console.log('Validação de campos vazios');
-      swal.fire({
-          icon: 'error',
-          title: 'Ooops!',
-          text: 'Preencha todos os campos!'
-      });
-  } else if (!emailPattern.test(email)) {
-      console.log('Validação de e-mail inválido');
-      swal.fire({
-          icon: 'error',
-          title: 'Oooops!',
-          text: 'Por favor, insira um e-mail válido!',
-      });
+  } else if (!validaEmail.test(email)) {
+    
+    Swal.fire({
+      title: "Formato de email inválido!",
+      text: "Por favor, utilize um email válido.",
+      icon: "error",
+      confirmButtonText: 'OK',
+      customClass: {
+      confirmButton: 'custom-confirm-button',
+    }});
+    
   } else {
-      console.log('Formulário enviado');
-
-      swal.fire({
-          icon: 'success',
-          title: 'Sucesso!',
-          text: 'Formulário enviado com sucesso!'
-      }).then(() => {
-          // Submeter o formulário manualmente após o alert de sucesso
-          document.getElementById('contact__form__id').submit();
-      });
+    
+    Swal.fire({
+      title: "Mensagem enviada!",
+      text: "Obrigado pelo contato! Te darei uma resposta em breve.",
+      icon: "success",
+      confirmButtonText: 'OK',
+      customClass: {
+      confirmButton: 'custom-confirm-button',
+    }}).then(() => {
+      document.getElementById('contact__form__id').submit();
+      
+      // Limpa os campos após o envio da mensagem
+      document.getElementById("contact__form__id").reset();
+    })
+    
   }
-}
+
+
+});
 
